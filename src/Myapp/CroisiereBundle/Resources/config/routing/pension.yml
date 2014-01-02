@@ -1,0 +1,30 @@
+pension:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:Pension:index" }
+
+pension_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:Pension:show" }
+
+pension_new:
+    pattern:  /new
+    defaults: { _controller: "CroisiereBundle:Pension:new" }
+
+pension_create:
+    pattern:  /create
+    defaults: { _controller: "CroisiereBundle:Pension:create" }
+    requirements: { _method: post }
+
+pension_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:Pension:edit" }
+
+pension_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:Pension:update" }
+    requirements: { _method: post|put }
+
+pension_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:Pension:delete" }
+    requirements: { _method: post|delete }

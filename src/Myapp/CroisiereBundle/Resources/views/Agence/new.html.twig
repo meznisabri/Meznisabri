@@ -1,0 +1,67 @@
+{% extends '::template.html.twig' %}
+
+{% block stepholder %}
+<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Add Agence </a></div>
+			<div class="step-dark-right">&nbsp;</div>
+			<div class="step-no-off">2</div>
+			<div class="step-light-left">Add Bateau</div>
+			<div class="step-light-right">&nbsp;</div>
+			<div class="step-no-off">3</div>
+			<div class="step-light-left">Add Cabine</div>
+			<div class="step-light-round">&nbsp;</div>
+                      
+                        
+			<div class="clear"></div>
+		</div>
+{% endblock %}
+ {% block form %}
+
+ {{ form_start(form) }}
+
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+	
+        <tr>
+        <th valign="top"> nomAgence </th>
+        <td>   {{ form_widget(form.nomAgence,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> description </th>
+        <td>   {{ form_widget(form.description,{'attr': {'class': 'form-textarea'}} )}} </td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> Adresse </th>
+        <td>   {{ form_widget(form.Adresse,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> Email </th>
+        <td>   {{ form_widget(form.Email,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+           <tr>
+        <th valign="top"> Tel </th>
+        <td>   {{ form_widget(form.Tel,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> Fax </th>
+        <td>   {{ form_widget(form.Fax,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+        <tr><td></td><td>     {{ form_widget(form.submit,{'attr': {'class': 'form-submit'}} )}}
+</td>
+        </table>
+    {{form_end(form)}}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('agence') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

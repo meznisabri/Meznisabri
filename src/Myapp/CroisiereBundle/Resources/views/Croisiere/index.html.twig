@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Croisiere list</h1>
+    <table class="records_list">
+        <thead>
+            <tr>
+             
+                <th>Datedepart</th>
+                <th>Datedefin</th>
+                <th>Destination</th>
+                <th>Portsdedepart</th>
+                <th>Prortsdarive</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.dateDepart %}{{ entity.dateDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.destination }}</td>
+                <td>{{ entity.portsDedepart }}</td>
+                <td>{{ entity.prortsDarive }}</td>
+                <td>{{ entity.Description }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('croisiere_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('croisiere_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  
+    {% endblock %}

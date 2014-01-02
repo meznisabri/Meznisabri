@@ -1,0 +1,30 @@
+imagecroisiere:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:index" }
+
+imagecroisiere_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:show" }
+
+imagecroisiere_new:
+    pattern:  /new
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:new" }
+
+imagecroisiere_create:
+    pattern:  /create
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:create" }
+    requirements: { _method: post }
+
+imagecroisiere_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:edit" }
+
+imagecroisiere_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:update" }
+    requirements: { _method: post|put }
+
+imagecroisiere_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:ImageCroisiere:delete" }
+    requirements: { _method: post|delete }

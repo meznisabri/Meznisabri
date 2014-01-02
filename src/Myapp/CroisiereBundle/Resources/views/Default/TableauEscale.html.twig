@@ -1,0 +1,36 @@
+
+<table>
+    <tr><td>
+            <h1>Escale</h1></td>
+        <td class="options-width">
+<a href="{{ path('escale_new',{ 'id': idCroisiere }) }}" title="Ajouter" class="icon-1 icon-5"></a>
+        </td>
+</table>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">Nomport</a></th>
+        <th class="table-header-repeat line-left"><a href="">Datedebutescale</a></th>
+        <th class="table-header-repeat line-left"><a href="">heureDebutEscale</a></th>
+        <th class="table-header-repeat line-left"><a href="">Datefinescale</a></th>
+         <th class="table-header-repeat line-left"><a href="">heureFinEscale</a></th>
+     <th class="table-header-repeat line-left"><a href="">description</a></th>
+     <th class="table-header-repeat line-left"><a href="">photo</a></th>
+     
+        <th class="table-header-options line-left"><a href=""> Action</a></th>
+        <tr>
+                {% for entity in entityEscale %}
+                <td>{{ entity.nomPort }}</td>
+                <td>{{ entity.dateDebutEscale|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.heureDebutEscale |date('H:i:s') }}</td>
+                <td>{{ entity.dateFinEscale|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.heureFinEscale|date('H:i:s')  }}</td>
+                <td>{{ entity.description  }}</td>
+                <td>{{ entity.photo }}</td>
+            
+        <td class="options-width">
+        <a href="{{ path('escale_edit',{ 'id': entity.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('escale_show',{ 'id': entity.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('escale_delete',{'id': entity.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>
+         {%endfor%}
+</table>

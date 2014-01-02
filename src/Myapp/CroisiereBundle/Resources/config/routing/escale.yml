@@ -1,0 +1,30 @@
+escale:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:Escale:index" }
+
+escale_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:Escale:show" }
+
+escale_new:
+    pattern:  /{id}/new
+    defaults: { _controller: "CroisiereBundle:Escale:new" }
+
+escale_create:
+    pattern:  /{id}/create
+    defaults: { _controller: "CroisiereBundle:Escale:create" }
+    requirements: { _method: post }
+
+escale_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:Escale:edit" }
+
+escale_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:Escale:update" }
+    requirements: { _method: post|put }
+
+escale_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:Escale:delete" }
+    requirements: { _method: post|delete }

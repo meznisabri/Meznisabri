@@ -1,0 +1,7 @@
+parameters:
+#    clt.example.class: Myapp\CltBundle\Example
+
+services:
+#    clt.example:
+#        class: %clt.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

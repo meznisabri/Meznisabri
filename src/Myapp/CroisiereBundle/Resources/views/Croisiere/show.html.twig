@@ -1,0 +1,17 @@
+{% extends '::template.html.twig' %}
+{% block stepholder %}
+{% endblock %}
+
+{% block form %}
+ {% include "CroisiereBundle:Default:TableauAgence.html.twig" %}
+ {% include "CroisiereBundle:Default:TableauBateau.html.twig" %}
+ {% include "CroisiereBundle:Default:TableauTypeCabine.html.twig" %}
+
+ {% if TypeTag=='CroisiereShow' %}
+ {% include "CroisiereBundle:Default:TableauPlusCroisiere.html.twig" %}
+ {% else %}
+
+ {% include "CroisiereBundle:Default:TableauCroisiere.html.twig" %}
+ {% endif %}
+
+{% endblock %}

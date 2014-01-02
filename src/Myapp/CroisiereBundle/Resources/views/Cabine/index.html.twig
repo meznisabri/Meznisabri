@@ -1,0 +1,36 @@
+{% extends '::template.html.twig' %}
+ {% block stepholder %}
+
+
+    {% endblock %}
+
+
+ {% block form %}
+    <h1>Cabine list</h1>
+    <table>
+<td class="options-width">
+<a href="{{ path('cabine_new') }}" title="Ajouter" class="icon-1 icon-5"></a>
+        </td>
+    </table>
+    	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+       <th class="table-header-repeat line-left minwidth-1"><a href="">Id</a></th>
+        <th class="table-header-repeat line-left"><a href="">Nomcabine</a></th>
+        <th class="table-header-options line-left"><a href="">Action</a></th>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('cabine_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nomCabine }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('cabine_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     
+    {% endblock %}

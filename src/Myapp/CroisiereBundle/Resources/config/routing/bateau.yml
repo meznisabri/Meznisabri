@@ -1,0 +1,34 @@
+bateau:
+    pattern:  admin/
+    defaults: { _controller: "CroisiereBundle:Bateau:index" }
+
+bateau_show:
+    pattern:  admin/{id}/show
+    defaults: { _controller: "CroisiereBundle:Bateau:show" }
+
+bateau_new:
+    pattern:  admin/{id}/new
+    defaults: { _controller: "CroisiereBundle:Bateau:new" }
+
+bateau_create:
+    pattern:  admin/create
+    defaults: { _controller: "CroisiereBundle:Bateau:create" }
+    requirements: { _method: post }
+
+bateau_edit:
+    pattern:  admin/{id}/edit
+    defaults: { _controller: "CroisiereBundle:Bateau:edit" }
+
+bateau_update:
+    pattern:  admin/{id}/update
+    defaults: { _controller: "CroisiereBundle:Bateau:update" }
+    requirements: { _method: post|put }
+
+bateau_delete:
+    pattern:  admin/{id}/delete
+    defaults: { _controller: "CroisiereBundle:Bateau:delete" }
+    requirements: { _method: post|delete }
+bateauc_create:
+    pattern:  admin/{id}/create
+    defaults: { _controller: "CroisiereBundle:Bateau:createBateau" }
+    requirements: { _method: post }

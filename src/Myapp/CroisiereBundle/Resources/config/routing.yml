@@ -1,0 +1,14 @@
+croisiere_homepage:
+    pattern:  /
+    defaults: { _controller: CroisiereBundle:Default:index }
+    
+agence_new:
+    pattern:  /agence
+    defaults: { _controller: CroisiereBundle:Agence:createAction }
+    
+
+agence:
+    resource: "@CroisiereBundle/Controller"
+    prefix:   /
+    
+    

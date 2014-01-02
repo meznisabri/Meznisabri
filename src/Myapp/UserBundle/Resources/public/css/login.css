@@ -1,0 +1,474 @@
+form {
+	position: relative;
+	width: 358px;
+	/* To compensate for the glow */
+	margin-left: -14px;
+}
+
+	form fieldset {
+		position: relative;
+		display: block;
+		border: 0;
+		margin-bottom: 10px;
+	}
+
+		form .inputs {	}
+
+			/* Maps:
+
+				map: default map
+				emap: error map
+				gmap: gray map
+
+			*/
+
+			/* Reset to blue map */
+
+			form .map,
+			form .gmap,
+			form .hmap {
+				top: 0;
+				left: 0;
+				position: absolute;
+				z-index: 10;
+				background: url(../images/rmap.jpg);
+				height: 100%;
+				width: 100%;
+			}
+
+			form .emap {
+				background-image: url(../images/emap.jpg);
+			}
+
+			form .gmap {
+				background: #343434 url(../images/gmap.jpg) no-repeat;
+				z-index: 11;
+			}
+
+			form .inputs .inner {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -148px;
+				margin-top: 15px;
+				z-index: 40;
+			}
+
+			form .content {
+				position: absolute;
+				left: 14px;
+				width: 330px;
+			}
+
+			form .content-top {
+				position: absolute;
+				top: 14px;
+				z-index: 30;
+				height: 5px;
+				background: url(../images/content-top.png) no-repeat;
+			}
+
+			form .content-middle {
+				position: absolute;
+				top: 19px; 
+				z-index: 30;
+				background: url(../images/content-middle.png) repeat-y;
+			}
+
+			form .content-gradient {
+				position: absolute;
+				top: 14px;
+				left: 14px;
+				z-index: 35;
+				width: 330px;
+
+			}
+
+			form .content-bottom {
+				position: absolute;
+				bottom: 14px;
+				z-index: 30;
+				height: 5px;
+				background: url(../images/content-bottom.png) no-repeat;
+			}
+
+			form .mask {
+				position: absolute;
+				width: 358px;
+				z-index: 20;
+			}
+
+			form .mask-top {
+				top: 0;
+				height: 30px;
+				background: url(../images/mask-top.png) no-repeat;
+			}
+
+			form .mask-middle {
+				background: url(../images/mask-middle.png) repeat-y;
+
+			}
+
+			form .mask-bottom {
+				bottom: 0;
+				height: 30px;
+				background: url(../images/mask-bottom.png) no-repeat;
+			}
+
+		form .buttons {
+			margin: 6px 14px 0 14px;
+			height: 30px;
+		}
+
+	form label {
+		display: block;
+		position: relative;
+		font-size: 11px;
+		color: #8c8c8c;
+		margin-bottom: 10px;
+	}
+
+	form input.text {
+		outline: none;
+		border: 0;
+		display: block;
+		height: 15px;
+		width: 285px;
+		padding: 5px;
+		background: url(../images/input.gif) no-repeat;
+		margin-bottom: 15px;
+		font-size: 11px;
+		color: #b3b3b3;
+	}
+
+	form input.text:focus {
+		background: url(../images/input.gif) bottom left no-repeat;
+	}
+
+	form select {
+		display: block;
+		width: 150px;
+		margin-bottom: 15px;
+		font-size: 11px;
+	}
+
+	form textarea {
+		display: block;
+		width: 285px !important;
+		height: 90px !important;
+		padding: 5px;
+		border: none;
+		background: url(../images/textarea.jpg) no-repeat;
+		color: #b3b3b3;
+	}
+
+	form textarea:focus {
+		outline: none;
+		background: url(../images/textarea.jpg) bottom left no-repeat;
+	}
+
+	form input.last,
+	form select.last {
+		margin-bottom: 0;
+	}
+
+	form .button {
+		display: block;
+		height: 35px;
+		position: absolute;
+		right: 0px;
+		border: 0;
+		cursor: pointer;
+		outline: none;
+	}
+
+	form .button .source,
+	form .button .hover {
+		text-indent: -4200px;
+		height: 30px;
+	}
+
+	form .button .hover {
+		background-position: 0 -30px !important;
+	}
+
+	form input.before-focus {
+		color: #a6a6a6;
+	}
+
+	.buttons .spinny {
+		display: none;
+		position: absolute;
+		top: 9px;
+	}
+
+	/* Tooltips */
+
+	form .input-container {
+		position: relative;
+		overflow: visible;
+	}
+
+
+	form .tip {
+		display: none;
+		position: absolute;
+		top: -4px;
+		height: 33px;
+		background: url(../images/tip-middle.png) repeat-x;
+	}
+
+	form .tip-start {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: -14px;
+		height: 33px;
+		padding-left: 14px;
+		background: url(../images/tip-start.png) no-repeat;
+	}
+
+	form .tip-middle {
+		display: block;
+		height: 33px;
+		padding: 0 5px;
+		font-size: 11px;
+		line-height: 33px;
+		color: #e5e5e5;
+	}
+
+	form .tip-end {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-right: -10px;
+		height: 33px;
+		padding-right: 10px;
+		background: url(../images/tip-end.png) no-repeat;
+	}
+
+
+
+/* Password/Message Sent */
+
+.form-wrap {
+	position: relative;
+}
+
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+body {
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	background: #080808 url(../images/header/bg.gif) repeat-x;
+	background: #080808 url(../images/body.jpg) no-repeat top center;
+}
+
+p {
+	font-size: 12px;
+	color: #6d7e8c;
+	line-height: 1.9;
+}
+
+a {
+	color: #e5e5e5;
+	outline: none;
+}
+
+a:hover {
+	color: #fff;
+}
+
+a:active {
+	color: #ccc !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#content {
+	text-shadow: #000 1px 1px 3px;
+	width: 330px;
+	margin: 0 auto;
+}
+
+/* Hoverfades */
+.hoverfade .hover,
+.hoverfade .source {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 40;
+}
+
+
+.hoverfade .hover {
+	z-index: 50 !important;
+}
+
+/* Corners */
+
+.corners { position: relative; }
+
+.corner-tl { background: top left url(../images/corner-tl.png) no-repeat; }
+.corner-tr { background: top right url(../images/corner-tr.png) no-repeat; }
+.corner-bl { background: bottom left url(../images/corner-bl.png) no-repeat; }
+.corner-br { background: bottom right url(../images/corner-br.png) no-repeat; }
+
+/* Preload */
+
+#preload {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	background: url(../images/emap.jpg) no-repeat;
+}
+
+/* Spinny */
+
+.spinny {
+	height: 16px;
+	width: 16px;
+	background: url(../images/spinny.gif) no-repeat;
+        text-indent: -4200px;
+height: 30px;
+}
+
+/* Info Boxes */
+
+
+.info {
+	position: relative;
+	width: 330px;
+	background: #0f0f0f url(../images/info.gif) repeat-x;
+	color: #8c8c8c;
+	font-size: 11px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.info .inner {
+
+}
+.info .inner {
+	padding: 15px;
+	padding-top: 12px;
+	line-height: 1.5;
+}
+
+.info a {
+	color: #b3b3b3;
+	text-decoration: none;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #2e2e2e;
+}
+
+.info a#installed {
+/* used to be just 	color: #b3b3b3;
+ */
+
+	background: url(../images/info-link.gif) repeat-x;
+	padding: 4px 5px;
+	text-decoration: none;
+}
+
+.info a:hover {
+	color: #fff;
+	border-bottom: 1px solid #808080;
+}
+
+form .gmap {
+	background-image: none;
+}
+
+/* Form divs */
+
+#forgot {
+	display: none;
+	top: -5px;
+}
+
+/* Form: Log in */
+
+form label a {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #a5a5a5;
+	cursor: pointer;
+}
+
+form label a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+#form-login { }
+
+#form-login #login-login {
+	width: 80px;
+}
+
+#form-login #login-login .source,
+#form-login #login-login .hover {
+	width: 80px;
+	background: url(../images/login.gif) no-repeat;
+}
+
+#form-login .spinny {
+	right: 90px;
+}
+
+/* Form: Forgot your password */
+
+	#form-forgot label {
+		color: #6f6c68;
+	}
+
+	#form-forgot #forgot-send {
+		width: 125px;
+	}
+
+	#form-forgot #forgot-send .source,
+	#form-forgot #forgot-send .hover {
+		width: 125px;
+		background: url(../images/forgot.gif) no-repeat;
+	}
+
+	#form-forgot #forgot-cancel {
+		width: 85px;
+		right: 130px;
+	}
+
+
+	#form-forgot #forgot-cancel .source,
+	#form-forgot #forgot-cancel .hover {
+		width: 85px;
+		background: url(../images/cancel.gif) no-repeat;
+	}
+
+	#form-forgot .spinny {
+		right: 220px;
+	}
+
+.btn_r
+{
+    
+    	width: 80px;
+	background: url(../images/login.gif) no-repeat;
+    text-indent: -4200px;
+		height: 30px;
+                border:0;
+}

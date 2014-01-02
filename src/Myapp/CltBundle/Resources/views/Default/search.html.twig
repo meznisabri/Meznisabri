@@ -1,0 +1,50 @@
+{% extends '::Clttemplate.html.twig' %}
+
+  
+
+{% block FistList %} 	
+<div class="first">
+			<h2>Hot Deals</h2>
+					<ul>
+                                              {% for  entityCroisiere in Croisiereleft  %}
+
+			                                
+						<li>
+							<a href="deals.html"><img height="90" width="140" src="{{asset(entityCroisiere.getWebPath)}}" alt=""/></a>
+							<span><a href="deals.html">{{entityCroisiere.destination}}</a></span>
+							<p>{{entityCroisiere.Description}}</p>
+							<a href="deals.html" class="details">See Details</a>
+							<a href="deals.html" class="book">Book Now!</a>
+						</li>
+                                             
+
+                                            {% endfor %}
+
+					</ul>
+					<a href="deals.html">View all</a>
+				</div>
+                            {% endblock %}
+
+              {% block SecondList %} 	
+				<div>
+					<h2>Special Offers</h2>
+					<ul>
+                                              {% for  entityCroisiere in CroisiereRight  %}
+
+			                                
+						<li>
+							<a href="deals.html"><img src="{{asset('bundles/clt/images/riverside-city.jpg')}}" alt=""/></a>
+							<span><a href="deals.html">{{entityCroisiere.destination}}</a></span>
+							<p>{{entityCroisiere.Description}}</p>
+							<a href="deals.html" class="details">See Details</a>
+							<a href="deals.html" class="book">Book Now!</a>
+						</li>
+                                             
+
+                                            {% endfor %}
+
+					</ul>
+					<a href="offers.html">View all</a>
+				</div>
+                                                        {% endblock %}
+               

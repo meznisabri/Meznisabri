@@ -1,0 +1,30 @@
+phototypecabine:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:index" }
+
+phototypecabine_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:show" }
+
+phototypecabine_new:
+    pattern:  /new
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:new" }
+
+phototypecabine_create:
+    pattern:  /create
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:create" }
+    requirements: { _method: post }
+
+phototypecabine_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:edit" }
+
+phototypecabine_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:update" }
+    requirements: { _method: post|put }
+
+phototypecabine_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:PhotoTypeCabine:delete" }
+    requirements: { _method: post|delete }

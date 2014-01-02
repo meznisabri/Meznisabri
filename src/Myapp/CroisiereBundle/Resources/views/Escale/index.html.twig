@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Escale list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomport</th>
+                <th>Datedebutescale</th>
+                <th>Heuredebutescale</th>
+                <th>Datefinescale</th>
+                <th>Heurefinescale</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('escale_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nomPort }}</td>
+                <td>{% if entity.dateDebutEscale %}{{ entity.dateDebutEscale|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.heureDebutEscale }}</td>
+                <td>{% if entity.dateFinEscale %}{{ entity.dateFinEscale|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.heureFinEscale }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.photo }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('escale_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('escale_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('escale_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

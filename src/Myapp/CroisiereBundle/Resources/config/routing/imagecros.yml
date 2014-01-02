@@ -1,0 +1,30 @@
+imagecros:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:imageCros:index" }
+
+imagecros_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:imageCros:show" }
+
+imagecros_new:
+    pattern:  /new
+    defaults: { _controller: "CroisiereBundle:imageCros:new" }
+
+imagecros_create:
+    pattern:  /create
+    defaults: { _controller: "CroisiereBundle:imageCros:create" }
+    requirements: { _method: post }
+
+imagecros_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:imageCros:edit" }
+
+imagecros_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:imageCros:update" }
+    requirements: { _method: post|put }
+
+imagecros_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:imageCros:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,37 @@
+{% extends '::Clttemplate.html.twig' %}
+                               {% block Find %}
+
+  
+
+<div>
+					<h3>Find A Cruise</h3>
+				
+                                      {{ form_start(form) }}
+                                            {{ form_widget(form.destination) }}
+                                            {{ form_widget(form.Bateau) }}
+                                            {{ form_widget(form.portsDedepart) }}
+
+                                        {{form_end(form)}}
+                                        
+
+					<div>
+						<h3>Already Booked?</h3>
+						<ul>
+							<li>
+								<a href="excursions.html">Check out our Excursions</a>
+								<p>You can remove any link to our website from this website template.</p>
+							</li>
+							<li>
+								<a href="restaurant.html">Check out our Specialty Restaurant</a>
+								<p>You're free to use this website template without linking back to us.</p>
+							</li>
+							<li>
+								<a href="activities.html">Check out our Special Activities</a>
+								<p>Please don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forum/">Forum</a>.</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+                        {% endblock %}
+
+			

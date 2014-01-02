@@ -1,0 +1,30 @@
+assurance:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:Assurance:index" }
+
+assurance_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:Assurance:show" }
+
+assurance_new:
+    pattern:  /new
+    defaults: { _controller: "CroisiereBundle:Assurance:new" }
+
+assurance_create:
+    pattern:  /create
+    defaults: { _controller: "CroisiereBundle:Assurance:create" }
+    requirements: { _method: post }
+
+assurance_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:Assurance:edit" }
+
+assurance_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:Assurance:update" }
+    requirements: { _method: post|put }
+
+assurance_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:Assurance:delete" }
+    requirements: { _method: post|delete }

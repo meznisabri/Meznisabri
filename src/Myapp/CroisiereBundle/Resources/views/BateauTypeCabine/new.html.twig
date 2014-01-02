@@ -1,0 +1,136 @@
+{% extends '::template.html.twig' %}
+
+
+	
+
+
+
+{% block stepholder %}
+<div id="step-holder">
+			<div class="step-no-off">1</div>
+			<div class="step-light-left"><a href="">Add Agence </a></div>
+			<div class="step-light-right">&nbsp;</div>
+			<div class="step-no-off">2</div>
+			<div class="step-light-left">Add Bateau</div>
+			<div class="step-light-right">&nbsp;</div>
+			<div class="step-no">3</div>
+			<div class="step-dark-left">Add Type Cabine</div>
+                        <div class="step-dark-right">&nbsp;</div>
+                        <div class="step-no-off">4</div>
+			<div class="step-light-left">Add Croisiere</div>
+			<div class="clear"></div>
+		</div>
+{% endblock %}
+
+{% block form %}
+
+
+{{ form_start(form) }}
+
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+        
+         <tr>
+        <th valign="top"> Cabine </th>
+        <td>   {{ form_widget(form2.Cabine,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> nature Chambre </th>
+        <td>   {{ form_widget(form2.nature,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> nbrPlace Chambre </th>
+        <td>   {{ form_widget(form2.nbrPlace,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> description </th>
+        <td>   {{ form_widget(form2.description,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+          <tr>
+      <tr>
+        <th valign="top"> Photo </th>
+        <td>   {{ form_widget(form3.Photo,{'attr': {'class': 'file_1'}})}}</td>
+      
+        <td></td>
+        </tr>
+        <tr><td></td><td>     {{ form_widget(form.submit,{'attr': {'class': 'form-submit'}} )}}
+      </td></tr>
+        </table>
+     {{form_end(form)}}
+
+
+
+
+
+
+
+
+
+
+
+<h1>Agence</h1>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">Nomagence</a></th>
+        <th class="table-header-repeat line-left"><a href="">Description</a></th>
+        <th class="table-header-options line-left"><a href=""> Action</a></th>
+        <tr>
+        <td>{{ entity2.nomAgence }}</td>
+        <td>{{ entity2.description }}</td>
+        <td class="options-width">
+        <a href="{{ path('agence_edit',{ 'id': entity2.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('agence_show',{ 'id': entity2.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('agence_delete',{'id': entity2.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>                                
+</table>
+
+
+
+
+
+<table>
+    <tr><td>
+            <h1>Bateau</h1></td>
+        <td class="options-width">
+<a href="{{ path('bateau_new',{ 'id': entity2.id }) }}" title="Ajouter" class="icon-1 icon-5"></a>
+        </td>
+</table>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left"><a href=""> Nom</a></th>
+                <th class="table-header-repeat line-left"><a href="">Categorie</a></th>
+                <th class="table-header-repeat line-left"><a href="">Typebateau</a></th>
+                <th class="table-header-repeat line-left"><a href="">Date</a></th>
+                <th class="table-header-repeat line-left"><a href="">Nbrpassange</a></th>
+                <th class="table-header-repeat line-left"><a href="">Tonnage</a></th>
+                <th class="table-header-repeat line-left"><a href="">Longeur</a></th>
+                <th class="table-header-repeat line-left"><a href="">Largeur</a></th>
+                <th class="table-header-repeat line-left"><a href="">Vitesse</a></th>
+                <th class="table-header-options line-left"><a href="">Action</a></th>
+                 {% for  entity2 in entityBateau  %}
+                <tr>
+                    
+                <td>{{ entity2.nomBateau }}</td>
+                <td>{{ entity2.categorie }}</td>
+                <td>{{ entity2.typeBateau }}</td>
+                <td>{% if entity2.dateEnservie %}{{ entity2.dateEnservie|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity2.nombrePassange }}</td>
+                <td>{{ entity2.tonnage }}</td>
+                <td>{{ entity2.longeur }}</td>
+                <td>{{ entity2.largeur }}</td>
+                <td>{{ entity2.vitesse }}</td>
+                <td class="options-width">                  
+                    <a href="{{ path('bateau_edit', { 'id': entity2.id }) }}"title="Edit" class="icon-1 info-tooltip"></a>
+                    <a href="{{ path('bateau_delete', { 'id': entity2.id }) }}"title="delete" class="icon-2 info-tooltip"></a>
+                </td>    
+                </tr>
+                        {% endfor %}
+
+        </table>
+
+
+
+{% endblock %}

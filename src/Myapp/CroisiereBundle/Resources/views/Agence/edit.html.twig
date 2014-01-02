@@ -1,0 +1,57 @@
+{% extends '::template.html.twig' %}
+ {% block stepholder  %}
+<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Edit Agence </a></div>
+			
+                      
+                        
+			<div class="clear"></div>
+		</div>
+
+{% endblock %}
+
+ {% block form %}
+
+    <h1>Agence edit</h1>
+        {{ form_start(edit_form) }}
+
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+	
+        <tr>
+        <th valign="top"> nomAgence </th>
+        <td>   {{ form_widget(edit_form.nomAgence,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> description </th>
+        <td>   {{ form_widget(edit_form.description,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+        
+           <tr>
+        <th valign="top"> Adresse </th>
+        <td>   {{ form_widget(edit_form.Adresse,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> Email </th>
+        <td>   {{ form_widget(edit_form.Email,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+           <tr>
+        <th valign="top"> Tel </th>
+        <td>   {{ form_widget(edit_form.Tel,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> Fax </th>
+        <td>   {{ form_widget(edit_form.Fax,{'attr': {'class': 'inp-form'}} )}} </td>
+        <td></td>
+        </tr>
+        <tr><td></td><td>     {{ form_widget(edit_form.submit,{'attr': {'class': 'form-submit'}} )}}
+</td>
+        </table>
+    {{form_end(edit_form)}}
+        
+{% endblock %}

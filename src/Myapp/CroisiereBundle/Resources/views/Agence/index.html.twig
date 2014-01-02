@@ -1,0 +1,53 @@
+{% extends '::template.html.twig' %}
+
+ {% block stepholder %}
+
+
+    {% endblock %}
+
+
+ {% block form %}
+
+    
+    	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">Nomagence</a></th>
+        <th class="table-header-repeat line-left"><a href="">Description</a></th>
+        <th class="table-header-options line-left"><a href="">Action</a></th>
+    {% for entity in entities %}
+        <tr>
+        <td>{{ entity.nomAgence }}</td>
+        <td>{{ entity.description }}</td>
+        <td class="options-width">
+        <a href="{{ path('agence_edit',{ 'id': entity.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('agence_show',{ 'id': entity.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('agence_delete',{'id': entity.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>
+
+    {% endfor %}
+
+                                
+        </table>
+      <!--  start paging..................................................... -->
+			<table border="0" cellpadding="0" cellspacing="0" id="paging-table">
+			<tr>
+			<td>
+				<a href="" class="page-far-left"></a>
+				<a href="" class="page-left"></a>
+				<div id="page-info">Page <strong>1</strong> / 15</div>
+				<a href="" class="page-right"></a>
+				<a href="" class="page-far-right"></a>
+			</td>
+			<td>
+			<select  class="styledselect_pages">
+				<option value="">Number of rows</option>
+				<option value="">1</option>
+				<option value="">2</option>
+				<option value="">3</option>
+			</select>
+			</td>
+			</tr>
+			</table>
+			<!--  end paging................ -->
+    {% endblock %}
+    

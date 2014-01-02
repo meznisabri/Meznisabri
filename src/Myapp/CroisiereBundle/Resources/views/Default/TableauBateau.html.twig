@@ -1,0 +1,49 @@
+
+<table>
+    <tr><td>
+            <h1>Bateau</h1></td>
+        <td class="options-width">
+<a href="{{ path('bateau_new',{ 'id': entity2.id }) }}" title="Ajouter" class="icon-1 icon-5"></a>
+        </td>
+</table>
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+                <th class="table-header-repeat line-left"><a href=""> Nom</a></th>
+                <th class="table-header-repeat line-left"><a href="">Categorie</a></th>
+                <th class="table-header-repeat line-left"><a href="">Typebateau</a></th>
+                <th class="table-header-repeat line-left"><a href="">Date</a></th>
+                <th class="table-header-repeat line-left"><a href="">Nbrpassange</a></th>
+                <th class="table-header-repeat line-left"><a href="">Tonnage</a></th>
+                <th class="table-header-repeat line-left"><a href="">Longeur</a></th>
+                <th class="table-header-repeat line-left"><a href="">Largeur</a></th>
+                <th class="table-header-repeat line-left"><a href="">Vitesse</a></th>
+                <th class="table-header-repeat line-left"><a href="">Affichable</a></th>
+
+                <th class="table-header-options line-left"><a href="">Action</a></th>
+                 {% for  entity2 in entityBateau  %}
+                <tr>         
+                <td>{{ entity2.nomBateau }}</td>
+                <td>{{ entity2.categorie }}</td>
+                <td>{{ entity2.typeBateau }}</td>
+                <td>{% if entity2.dateEnservie %}{{ entity2.dateEnservie|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ entity2.nombrePassange }}</td>
+                <td>{{ entity2.tonnage }}</td>
+                <td>{{ entity2.longeur }}</td>
+                <td>{{ entity2.largeur }}</td>
+                <td>{{ entity2.vitesse }}</td>
+                <td>
+{% if entity2.Affichable==1 %}
+True               
+{%else %}
+False
+ {% endif %}     </td>
+
+                <td class="options-width">                  
+                  <a href="{{ path('bateau_edit', { 'id': entity2.id }) }}"title="Edit" class="icon-1 info-tooltip"></a>
+                  <a href="{{ path('croisiere_show',{ 'id': entity2.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+                  <a href="{{ path('bateau_delete', { 'id': entity2.id }) }}"title="delete" class="icon-2 info-tooltip"></a>
+                </td>    
+                </tr>
+                {% endfor %}
+
+        </table>
+

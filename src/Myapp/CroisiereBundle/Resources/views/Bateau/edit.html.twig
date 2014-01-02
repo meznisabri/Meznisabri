@@ -1,0 +1,74 @@
+{% extends '::template.html.twig' %}
+ {% block stepholder  %}
+<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Edit Bateau </a></div>
+			
+                      
+                        
+			<div class="clear"></div>
+		</div>
+
+{% endblock %}
+
+ {% block form %}
+{{ form_start(edit_form) }}
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+        <tr>
+        <th valign="top"> nomBateau </th>
+        <td>   {{ form_widget(edit_form.nomBateau,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> categorie </th>
+        <td>   {{ form_widget(edit_form.categorie,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> typeBateau </th>
+        <td>   {{ form_widget(edit_form.typeBateau,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> dateEnservie </th>
+        <td> {{ form_widget(edit_form.dateEnservie,{'attr': {'class': 'inp-form'}})}} </td>
+        <td><a href=""id="date-pick"><img src="{{ asset('bundles/croisiere/images/forms/icon_calendar.jpg') }}"alt="" /></a></td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> nombrePassange </th>
+        <td>   {{ form_widget(edit_form.nombrePassange,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> tonnage </th>
+        <td>   {{ form_widget(edit_form.tonnage,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> longeur </th>
+        <td>   {{ form_widget(edit_form.longeur,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> largeur </th>
+        <td>   {{ form_widget(edit_form.largeur,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> vitesse </th>
+        <td>   {{ form_widget(edit_form.vitesse,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>   
+          <tr>
+        <th valign="top"> Affichable </th>
+        <td>   {{ form_widget(edit_form.Affichable,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>   
+  <tr><td></td><td>     {{ form_widget(edit_form.submit,{'attr': {'class': 'form-submit'}} )}}
+      </td></tr>
+        </table>
+        {{form_end(edit_form)}}
+{% endblock %}
+
+

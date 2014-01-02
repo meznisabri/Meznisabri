@@ -1,0 +1,7 @@
+clt_homepage:
+    pattern:  /
+    defaults: { _controller: CltBundle:Default:index }
+
+search_croisiere:
+    pattern: search
+    defaults: { _controller: CltBundle:Default:search }

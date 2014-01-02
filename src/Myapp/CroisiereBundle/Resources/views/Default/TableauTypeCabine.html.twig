@@ -1,0 +1,41 @@
+
+
+<table>
+    <tr><td>
+          <h1>Type Cabine</h1></td>
+        <td class="options-width">
+        </td>
+</table>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">nature</a></th>
+        <th class="table-header-repeat line-left"><a href="">nbrPlace</a></th>
+                <th class="table-header-repeat line-left"><a href="">description</a></th>
+        <th class="table-header-repeat line-left"><a href="">Affichable</a></th>
+
+                    
+
+        <th class="table-header-options line-left"><a href=""> Action</a></th>
+            {% for BTypeCabine in BateauTypeCabine %}
+            <tr>
+<td><a href="{{ path('bateautypecabine_show', { 'id': BTypeCabine.TypeCabine.id }) }}">{{ BTypeCabine.TypeCabine.nature  }}</a></td>
+<td><a href="{{ path('bateautypecabine_show', { 'id': BTypeCabine.TypeCabine.id  }) }}">{{ BTypeCabine.TypeCabine.nbrPlace }}</a></td>
+<td><a href="{{ path('bateautypecabine_show', { 'id': BTypeCabine.TypeCabine.id  }) }}">{{ BTypeCabine.TypeCabine.description }}</a></td>
+      <td>
+{% if BTypeCabine.TypeCabine.Affichable==1 %}
+True               
+{%else %}
+False
+ {% endif %}    
+      </td>
+                <td>
+                
+                        <a href="{{ path('bateautypecabine_show', { 'id': BTypeCabine.TypeCabine.id }) }}"title="Edit" class="icon-1 info-tooltip"></a>
+                    
+                        <a href="{{ path('bateautypecabine_edit', { 'id': BTypeCabine.TypeCabine.id }) }}"title="Edit" class="icon-2 info-tooltip"></a>
+                    
+         
+                </td>
+            </tr>
+        {% endfor %}
+
+</table>

@@ -1,0 +1,42 @@
+
+<table>
+<tr><td>
+<h1>Croisiere</h1></td>
+<td class="options-width">
+<a href="{{ path('croisiere_new',{ 'id': entity2.id }) }}" title="Ajouter" class="icon-1 icon-5"></a>
+       </td>
+        </tr>
+        </table>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">dateDepart</a></th>
+        <th class="table-header-repeat line-left"><a href="">dateDefin</a></th>
+        <th class="table-header-repeat line-left"><a href="">destination</a></th>
+        <th class="table-header-repeat line-left"><a href="">portsDedepart</a></th>
+        <th class="table-header-repeat line-left"><a href="">prortsDarive</a></th>
+        <th class="table-header-repeat line-left"><a href="">Description</a></th>
+        <th class="table-header-repeat line-left"><a href="">Affichable</a></th>
+
+        <th class="table-header-options line-left"><a href=""> Action</a></th>        
+        <tr>
+         
+            <td>{% if entityCroisiere.dateDepart %}{{ entityCroisiere.dateDepart|date('H:i:s') }}{% endif %}</td>
+           <td>{% if entityCroisiere.dateDefin %}{{ entityCroisiere.dateDefin|date('H:i:s') }}{% endif %}</td>
+                <td>{{ entityCroisiere.destination }}</td>
+                <td>{{ entityCroisiere.portsDedepart }}</td>
+                <td>{{ entityCroisiere.prortsDarive }}</td>
+                <td>{{ entityCroisiere.Description }}</td>
+                             <td>
+{% if entityCroisiere.Affichable==1 %}
+True               
+{%else %}
+False
+ {% endif %}     </td>
+
+        <td class="options-width">
+        <a href="{{ path('croisiere_edit',{ 'id': entityCroisiere.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('escale_show',{ 'id': entityCroisiere.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('croisiere_delete',{'id': entityCroisiere.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>  
+                  
+</table>

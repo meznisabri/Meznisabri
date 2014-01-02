@@ -1,0 +1,56 @@
+clt:
+    resource: "@CltBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+_type_cabine:
+    resource: "@CroisiereBundle/Resources/config/routing/typecabine.yml"
+    prefix:   /admin/typecabine
+    
+
+    
+_imagecors:
+    resource: "@CroisiereBundle/Resources/config/routing/imagecros.yml"
+    prefix:   /admin/imagecros
+        
+
+     
+    
+_Bateaue:
+    resource: "@CroisiereBundle/Resources/config/routing/bateau.yml"
+    prefix:   /admin/bateau
+
+_BateaueTypeCabine:
+    resource: "@CroisiereBundle/Resources/config/routing/bateautypecabine.yml"
+    prefix:   /admin/bateautypecabine
+_croisiere:
+    resource: "@CroisiereBundle/Resources/config/routing/croisiere.yml"
+    prefix:   /admin/croisiere
+_pension:
+    resource: "@CroisiereBundle/Resources/config/routing/pension.yml"
+    prefix:   /admin/pension
+_escale:
+    resource: "@CroisiereBundle/Resources/config/routing/escale.yml"
+    prefix:   /admin/escale
+_assurance:
+    resource: "@CroisiereBundle/Resources/config/routing/assurance.yml"
+    prefix:   /admin/assurance
+croisiere:
+    resource: "@CroisiereBundle/Resources/config/routing.yml"
+    prefix:   /admin
+    
+escale:
+    resource: "@CroisiereBundle/Resources/config/routing.yml"
+    prefix:   /admin
+    
+
+Agence:
+    resource: "@CroisiereBundle/Resources/config/routing.yml"
+    prefix:   /admin
+    
+_user_bundle:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    

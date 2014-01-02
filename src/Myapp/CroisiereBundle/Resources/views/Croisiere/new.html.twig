@@ -1,0 +1,90 @@
+{% extends '::template.html.twig' %}
+
+{% block stepholder %}
+<div id="step-holder">
+			<div class="step-no-off">1</div>
+			<div class="step-light-left"><a href="">Add Agence </a></div>
+			<div class="step-light-right">&nbsp;</div>
+			<div class="step-no-off">2</div>
+			<div class="step-light-left">Add Bateau</div>
+			<div class="step-light-right">&nbsp;</div>
+			<div class="step-no-off">3</div>
+			<div class="step-light-left">Add Type Cabine</div>
+                        <div class="step-light-right">&nbsp;</div>
+                        <div class="step-no">4</div>
+			<div class="step-dark-left">Add Croisiere</div>
+                         <div class="step-dark-right"></div>
+
+                        <div class="step-no-off">5</div>
+			<div class="step-light-left">Add Escale</div>
+			<div class="clear"></div>
+		</div>
+{% endblock %}
+
+{% block form %}
+{{ form_start(form) }}
+
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+        <tr>
+        <th valign="top"> dateDepart </th>
+        <td>   {{ form_widget(form.dateDepart,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> dateDefin </th>
+        <td>   {{ form_widget(form.dateDefin,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> destination </th>
+        <td>   {{ form_widget(form.destination,{'attr': {'class': 'orm-textarea'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> portsDedepart </th>
+        <td>   {{ form_widget(form.portsDedepart,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> PrortsDarive </th>
+        <td> {{ form_widget(form.prortsDarive,{'attr': {'class': 'inp-form'}})}} </td>
+        
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> Description </th>
+        <td> {{ form_widget(form.Description,{'attr': {'class': 'form-textarea'}})}} </td>
+        <td></td>
+        </tr> <tr>
+        <th valign="top"> Pension </th>
+        <td> {{ form_widget(form.Pension,{'attr': {'class': 'inp-form'}})}} </td>
+        
+        <td></td>
+        </tr>
+         <tr>
+        <th valign="top"> Affichable </th>
+        <td>   {{ form_widget(form.Affichable,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        <tr>
+        <th valign="top"> Image </th>
+        <td>    
+            
+
+        {{ form_widget(form.file,{'attr': {'class': 'inp-form'}})}}
+
+  
+  
+        <td></td>
+        </tr>   
+        <tr><td></td><td>     {{ form_widget(form.submit,{'attr': {'class': 'form-submit'}} )}}
+        </td></tr>   
+    </table>
+
+           {{ form_end(form) }}
+  
+
+         {% include "CroisiereBundle:Default:TableauAgence.html.twig" %}       
+         {% include "CroisiereBundle:Default:TableauBateau.html.twig" %}
+
+
+{% endblock %}

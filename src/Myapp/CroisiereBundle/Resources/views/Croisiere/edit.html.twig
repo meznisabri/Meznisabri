@@ -1,0 +1,68 @@
+{% extends '::template.html.twig' %}
+
+{% block stepholder %}
+<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Edit Croisiere </a></div>
+			
+                      
+                        
+			<div class="clear"></div>
+		</div>
+{% endblock %}
+
+{% block form %}
+{{ form_start(edit_form) }}
+
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+        <tr>
+        <th valign="top"> dateDepart </th>
+        <td>   {{ form_widget(edit_form.dateDepart,{'attr': {'class': 'form-textarea'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> dateDefin </th>
+        <td>   {{ form_widget(edit_form.dateDefin,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> destination </th>
+        <td>   {{ form_widget(edit_form.destination,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> portsDedepart </th>
+        <td>   {{ form_widget(edit_form.portsDedepart,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> PrortsDarive </th>
+        <td> {{ form_widget(edit_form.prortsDarive,{'attr': {'class': 'inp-form'}})}} </td>
+        
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> Description </th>
+        <td> {{ form_widget(edit_form.Description,{'attr': {'class': 'form-textarea'}})}} </td>
+        <td></td>
+        </tr> <tr>
+        <th valign="top"> Pension </th>
+        <td>  </td>
+        
+        <td></td>
+        </tr>
+         <tr>
+        <th valign="top"> Affichable </th>
+        <td>   {{ form_widget(edit_form.Affichable,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        <tr>
+        <th valign="top"> Image </th>
+        <td>    
+        <td></td>
+        </tr>   
+        <tr><td></td><td>     {{ form_widget(edit_form.submit,{'attr': {'class': 'form-submit'}} )}}
+        </td></tr>   
+    </table>
+           {{ form_end(edit_form) }}
+  
+{% endblock %}

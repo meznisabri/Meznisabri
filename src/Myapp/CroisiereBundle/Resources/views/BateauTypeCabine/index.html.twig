@@ -1,0 +1,36 @@
+{% extends '::template.html.twig' %}
+
+{% block form %}
+    <h1>BateauTypeCabine list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('bateautypecabine_show', { 'id': entity.Bateau.nomBateau }) }}">{{ entity.Bateau.nomBateau }}</a></td>
+                 <td><a href="{{ path('bateautypecabine_show', { 'id': entity.Bateau.categorie }) }}">{{ entity.Bateau.categorie }}</a></td>
+              
+                
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('bateautypecabine_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('bateautypecabine_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+       
+    {% endblock %}

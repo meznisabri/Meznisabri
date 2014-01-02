@@ -1,0 +1,115 @@
+{% extends '::template.html.twig' %}
+{% block stepholder %}
+<div id="step-holder">
+			<div class="step-no-off">1</div>
+			<div class="step-light-left"><a href="">Add Agence </a></div>
+			<div class="step-light-right">&nbsp;</div>
+			<div class="step-no">2</div>
+			<div class="step-dark-left">Add Bateau</div>
+                        <div class="step-dark-right">&nbsp;</div>
+			<div class="step-no-off">3</div>
+			<div class="step-light-left">Add Cabine</div>
+                        <div class="step-light-right">&nbsp;</div>
+                        <div class="step-no-off">4</div>
+			<div class="step-light-left">Add Croisiere</div>
+                        <div class="step-light-round">&nbsp;</div>                      
+
+			<div class="clear"></div>
+		</div>
+{% endblock %}
+
+{% block form %}
+{{ form_start(form) }}
+        <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+        <tr>
+        <th valign="top"> nomBateau </th>
+        <td>   {{ form_widget(form.nomBateau,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> categorie </th>
+        <td>   {{ form_widget(form.categorie,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> typeBateau </th>
+        <td>   {{ form_widget(form.typeBateau,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> dateEnservie </th>
+        <td> {{ form_widget(form.dateEnservie,{'attr': {'class': 'inp-form'}})}} </td>
+        <td><a href=""id="date-pick"><img src="{{ asset('bundles/croisiere/images/forms/icon_calendar.jpg') }}"alt="" /></a></td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> nombrePassange </th>
+        <td>   {{ form_widget(form.nombrePassange,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> tonnage </th>
+        <td>   {{ form_widget(form.tonnage,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+        <tr>
+        <th valign="top"> longeur </th>
+        <td>   {{ form_widget(form.longeur,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> largeur </th>
+        <td>   {{ form_widget(form.largeur,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>
+          <tr>
+        <th valign="top"> vitesse </th>
+        <td>   {{ form_widget(form.vitesse,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>   
+          <tr>
+        <th valign="top"> Affichable </th>
+        <td>   {{ form_widget(form.Affichable,{'attr': {'class': 'inp-form'}})}}</td>
+        <td></td>
+        </tr>   
+  <tr><td></td><td>     {{ form_widget(form.submit,{'attr': {'class': 'form-submit'}} )}}
+      </td></tr>
+        </table>
+        {{form_end(form)}}
+
+
+
+
+
+
+
+
+
+
+
+<h1>Agence</h1>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">Nomagence</a></th>
+        <th class="table-header-repeat line-left"><a href="">Description</a></th>
+        <th class="table-header-options line-left"><a href=""> Action</a></th>
+        <tr>
+        <td>{{ entity2.nomAgence }}</td>
+        <td>{{ entity2.description }}</td>
+        <td class="options-width">
+        <a href="{{ path('agence_edit',{ 'id': entity2.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('agence_show',{ 'id': entity2.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('agence_delete',{'id': entity2.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>                                
+        </table>
+
+
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('bateau') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+
+<h1>Agence</h1>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">Nomagence</a></th>
+        <th class="table-header-repeat line-left"><a href="">Description</a></th>
+                <th class="table-header-repeat line-left"><a href="">Adresse</a></th>
+
+                        <th class="table-header-repeat line-left"><a href="">Email</a></th>
+
+        <th class="table-header-options line-left"><a href=""> Action</a></th>
+        <tr>
+        <td>{{ entity2.nomAgence }}</td>
+        <td>{{ entity2.description }}</td>
+                <td>{{ entity2.Adresse 	 }}</td>
+
+                        <td>{{ entity2.Email }}</td>
+
+        <td class="options-width">
+        <a href="{{ path('agence_edit',{ 'id': entity2.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('agence_show',{ 'id': entity2.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('agence_delete',{'id': entity2.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>                                
+</table>

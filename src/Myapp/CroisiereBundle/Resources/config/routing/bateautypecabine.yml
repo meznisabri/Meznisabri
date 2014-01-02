@@ -1,0 +1,30 @@
+bateautypecabine:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:index" }
+
+bateautypecabine_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:show" }
+
+bateautypecabine_new:
+    pattern:   /{id}/{idagence}/new
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:new" }
+
+bateautypecabine_create:
+    pattern:  /{id}/create
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:create" }
+    requirements: { _method: post }
+
+bateautypecabine_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:edit" }
+
+bateautypecabine_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:update" }
+    requirements: { _method: post|put }
+
+bateautypecabine_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:BateauTypeCabine:delete" }
+    requirements: { _method: post|delete }

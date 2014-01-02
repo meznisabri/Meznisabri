@@ -1,0 +1,30 @@
+croisiere:
+    pattern:  /
+    defaults: { _controller: "CroisiereBundle:Croisiere:index" }
+
+croisiere_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CroisiereBundle:Croisiere:show" }
+
+croisiere_new:
+    pattern:  /{id}/new
+    defaults: { _controller: "CroisiereBundle:Croisiere:new" }
+
+croisiere_create:
+    pattern:  /{id}/create
+    defaults: { _controller: "CroisiereBundle:Croisiere:create" }
+    requirements: { _method: post }
+
+croisiere_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CroisiereBundle:Croisiere:edit" }
+
+croisiere_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CroisiereBundle:Croisiere:update" }
+    requirements: { _method: post|put }
+
+croisiere_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CroisiereBundle:Croisiere:delete" }
+    requirements: { _method: post|delete }

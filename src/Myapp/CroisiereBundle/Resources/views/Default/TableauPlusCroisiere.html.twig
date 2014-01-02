@@ -1,0 +1,43 @@
+
+<table>
+ <tr><td>
+            <h1>Croisiere</h1></td>
+      <td class="options-width">
+<a href="{{ path('croisiere_new',{ 'id': entity2.id }) }}" title="Ajouter" class="icon-1 icon-5"></a>
+        </td>
+ </tr>
+</table>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">	
+        <th class="table-header-repeat line-left minwidth-1"><a href="">dateDepart</a></th>
+        <th class="table-header-repeat line-left"><a href="">dateDefin</a></th>
+                <th class="table-header-repeat line-left"><a href="">destination</a></th>
+
+                        <th class="table-header-repeat line-left"><a href="">portsDedepart</a></th>
+        <th class="table-header-repeat line-left"><a href="">prortsDarive</a></th>
+        <th class="table-header-repeat line-left"><a href="">Description</a></th>
+        <th class="table-header-repeat line-left"><a href="">Affichable</a></th>
+        <th class="table-header-options line-left"><a href=""> Action</a></th>
+            
+                   {% for  entity2 in entityCroisiere  %}
+        <tr>
+            <td>{% if entity2.dateDepart %}{{ entity2.dateDepart|date('H:i:s') }}{% endif %}</td>
+           <td>{% if entity2.dateDefin %}{{ entity2.dateDefin|date('H:i:s') }}{% endif %}</td>
+                <td>{{ entity2.destination }}</td>
+                <td>{{ entity2.portsDedepart }}</td>
+                <td>{{ entity2.prortsDarive }}</td>
+                <td>{{ entity2.Description }}</td>
+                                <td>
+{% if entity2.Affichable==1 %}
+True               
+{%else %}
+False
+ {% endif %}     </td>
+        <td class="options-width">
+        <a href="{{ path('croisiere_edit',{ 'id': entity2.id }) }}" title="Edit" class="icon-1 info-tooltip"></a>
+        <a href="{{ path('escale_show',{ 'id': entity2.id }) }}" title="show" class="icon-3 info-tooltip"></a>	           
+        <a href="{{ path('croisiere_delete',{'id': entity2.id}) }}" title="delete" class="icon-2 info-tooltip"></a>
+        </td>
+        </tr>  
+                        {% endfor %}
+
+</table>
